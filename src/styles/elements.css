@@ -1,0 +1,19 @@
+.input-box {
+    background: #e0e0e0;
+    color: #000;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #858694;
+    border-bottom: 1px solid #858694;
+}
+
+.input-box:hover {
+    cursor: pointer;
+    background: #d6d6d6;
+}
+
+.input-box span {
+    font-size: 25px;
+}

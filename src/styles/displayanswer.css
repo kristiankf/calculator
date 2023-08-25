@@ -1,0 +1,11 @@
+.display-area {
+    background: #858694;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+.display-area span {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 600;
+}
