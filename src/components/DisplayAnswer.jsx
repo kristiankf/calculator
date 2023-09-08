@@ -1,10 +1,15 @@
 import "../styles/displayanswer.css";
+import { useState } from "react";
 
-export default function DisplayAnswer() {
+export default function DisplayAnswer({ displayValue }) {
   return (
     <>
       <div className="display-area">
-        <span>15</span>
+        <span>
+          {displayValue.map((elem, index) => {
+            return <span key={index}>{elem.elem}</span>;
+          })}
+        </span>
       </div>
     </>
   );

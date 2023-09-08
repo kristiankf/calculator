@@ -5,12 +5,15 @@ import "../styles/elementcontainer.css";
 export default function ElementContainer({
   handleNumberClick,
   handleOperatorClick,
+  handleClearClick,
+  deleteLastElement,
+  calculate,
 }) {
   return (
     <>
       <div className="container">
-        <Operator element={"AC"} onElementClick={handleOperatorClick} />
-        <Operator element={"+/-"} onElementClick={handleOperatorClick} />
+        <Operator element={"AC"} onElementClick={handleClearClick} />
+        <Operator element={"del"} onElementClick={deleteLastElement} />
         <Operator element={"%"} onElementClick={handleOperatorClick} />
         <Operator
           className="orange"
@@ -47,11 +50,7 @@ export default function ElementContainer({
           onElementClick={handleNumberClick}
         />
         <Number element={"."} onElementClick={handleNumberClick} />
-        <Operator
-          className="orange"
-          element={"="}
-          onElementClick={handleOperatorClick}
-        />
+        <Operator className="orange" element={"="} onElementClick={calculate} />
       </div>
     </>
   );
