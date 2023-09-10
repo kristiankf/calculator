@@ -3,10 +3,21 @@
     padding: 10px 20px;
     text-align: right;
     height: 50px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* direction: rtl; */
+    /* scrollbar-gutter: stable both-edges; */
+}
+
+.display-area::-webkit-scrollbar {
+    display: none;
 }
 
 .display-area span {
-    font-size: 40px;
+    display: flex;
+        justify-content: flex-end;
+        /* white-space: nowrap; */
+    font-size: 30px;
     line-height: 40px;
     font-weight: 600;
 }

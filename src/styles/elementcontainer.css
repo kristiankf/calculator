@@ -18,3 +18,11 @@
 .orange:hover {
     background: #f77d12;
 }
+.green {
+    background: #21d111;
+    color: initial
+}
+
+.green:hover {
+    background: #2cbc05;
+}

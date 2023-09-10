@@ -1,6 +1,7 @@
 import Operator from "./Operator";
 import Number from "./Number";
 import "../styles/elementcontainer.css";
+import { useState } from "react";
 
 export default function ElementContainer({
   handleNumberClick,
@@ -9,14 +10,19 @@ export default function ElementContainer({
   deleteLastElement,
   calculate,
 }) {
+  const [theClass, setTheClass] = useState("orange");
+  function krisWale() {
+    let c = theClass == "orange" ? "green" : "orange";
+    setTheClass(c);
+  }
   return (
     <>
       <div className="container">
         <Operator element={"AC"} onElementClick={handleClearClick} />
         <Operator element={"del"} onElementClick={deleteLastElement} />
-        <Operator element={"%"} onElementClick={handleOperatorClick} />
+        <Operator element={"KW"} onElementClick={krisWale} />
         <Operator
-          className="orange"
+          className={theClass}
           element={"÷"}
           onElementClick={handleOperatorClick}
         />
@@ -24,7 +30,7 @@ export default function ElementContainer({
         <Number element={"8"} onElementClick={handleNumberClick} />
         <Number element={"9"} onElementClick={handleNumberClick} />
         <Operator
-          className="orange"
+          className={theClass}
           element={"x"}
           onElementClick={handleOperatorClick}
         />
@@ -32,7 +38,7 @@ export default function ElementContainer({
         <Number element={"5"} onElementClick={handleNumberClick} />
         <Number element={"6"} onElementClick={handleNumberClick} />
         <Operator
-          className="orange"
+          className={theClass}
           element={"-"}
           onElementClick={handleOperatorClick}
         />
@@ -40,7 +46,7 @@ export default function ElementContainer({
         <Number element={"2"} onElementClick={handleNumberClick} />
         <Number element={"3"} onElementClick={handleNumberClick} />
         <Operator
-          className="orange"
+          className={theClass}
           element={"+"}
           onElementClick={handleOperatorClick}
         />
@@ -50,7 +56,11 @@ export default function ElementContainer({
           onElementClick={handleNumberClick}
         />
         <Number element={"."} onElementClick={handleNumberClick} />
-        <Operator className="orange" element={"="} onElementClick={calculate} />
+        <Operator
+          className={theClass}
+          element={"="}
+          onElementClick={calculate}
+        />
       </div>
     </>
   );
